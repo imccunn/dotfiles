@@ -1,52 +1,32 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
+execute pathogen#infect()
+" set nocompatible              " be iMproved, required
+" filetype off                  " required
+syntax on
+filetype plugin indent on
+set t_Co=256
+set term=xterm-256color
 set background=dark
 set nowrap
 set scrolloff=2
 set laststatus=2
 set showmatch
 set tabstop=2
-set expandtab
 set shiftwidth=2
-set expandtab
 set number
-
-syntax enable
-colorscheme monokai
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'moll/vim-node'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'heavenshell/vim-jsdoc'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-filetype plugin indent on
-
+set cursorline
+set expandtab
 set title
 set ruler
+set background=light
+set wildmenu
+set incsearch
+set hlsearch
+
+colorscheme monokai
+highlight CursorLine term=bold cterm=bold
+highlight CursorLineNr term=bold ctermfg=red guifg=white
+highlight LineNr ctermfg=green
+
 
 inoremap jk <esc>
 inoremap <esc> <nop>
