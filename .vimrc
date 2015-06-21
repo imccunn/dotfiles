@@ -1,8 +1,57 @@
-execute pathogen#infect()
-" set nocompatible              " be iMproved, required
-" filetype off                  " required
-syntax on
+" lBerio0 vimrc file
+" 6/15
+
+
+" Bundle Scripts-----------------------------
+if has('vim_starting')
+    if &compatible
+      set nocompatible               " Be iMproved
+    endif
+
+" Required:
+   set runtimepath+=/Users/ianmccunn/.vim/bundle/neobundle.vim/
+endif
+      
+" Required:
+call neobundle#begin(expand('/Users/ianmccunn/.vim/bundle'))
+        
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+        
+" Add or remove your Bundles here:
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'bling/vim-airline'
+NeoBundle 'moll/vim-node'
+NeoBundle 'marijnh/tern_for_vim'
+" You can specify revision/branch/tag.
+        
+" Required:
+call neobundle#end()
+        
+" Required:
 filetype plugin indent on
+        
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
+
+
+" Update open buffer when this file is changed
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+colorscheme monokai 
+
+syntax on
 set t_Co=256
 set term=xterm-256color
 set background=dark
@@ -22,12 +71,9 @@ set wildmenu
 set incsearch
 set hlsearch
 
-colorscheme monokai
-highlight CursorLine term=bold cterm=bold
-highlight CursorLineNr term=bold ctermfg=red guifg=white
-highlight LineNr ctermfg=green
+highlight Cursor guibg=black guifg=green ctermbg=black ctermfg=green 
 
-
+" lBeri0 Keymappings
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <UP> <nop>
