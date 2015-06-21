@@ -2,6 +2,12 @@
 " 6/15
 
 
+"  'flazz/vim-colorschemes'
+"  'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+"  'bling/vim-airline'
+"  'moll/vim-node'
+"  'marijnh/tern_for_vim'
+
 " Bundle Scripts-----------------------------
 if has('vim_starting')
     if &compatible
@@ -45,10 +51,6 @@ augroup myvimrc
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-
 colorscheme monokai 
 
 syntax on
@@ -80,3 +82,4 @@ inoremap <UP> <nop>
 inoremap <DOWN> <nop>
 inoremap <LEFT> <nop>
 inoremap <RIGHT> <nop>
+
