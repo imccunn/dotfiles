@@ -47,11 +47,14 @@ NeoBundleCheck
 
 " vim-less requirement
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 " Update open buffer when this file is changed
 augroup myvimrc
   au!
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
+
+
 
 colorscheme monokai 
 
@@ -65,9 +68,9 @@ set laststatus=2
 set showmatch
 set tabstop=2
 set shiftwidth=2
+set expandtab
 set number
 set cursorline
-set expandtab
 set title
 set ruler
 set background=light
@@ -75,7 +78,19 @@ set wildmenu
 set incsearch
 set hlsearch
 
-highlight Cursor guibg=black guifg=green ctermbg=black ctermfg=green 
+" number/relativenumber toggle function
+function! LineNumToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call LineNumToggle()<cr>
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " lBeri0 Keymappings
 inoremap jk <esc>
