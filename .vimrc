@@ -31,6 +31,7 @@ NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'moll/vim-node'
 NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'groenewege/vim-less'
 " You can specify revision/branch/tag.
         
 " Required:
@@ -44,7 +45,8 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
-
+" vim-less requirement
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 " Update open buffer when this file is changed
 augroup myvimrc
   au!
