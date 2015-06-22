@@ -55,7 +55,6 @@ augroup myvimrc
 augroup END
 
 
-
 colorscheme monokai 
 
 syntax on
@@ -78,6 +77,8 @@ set wildmenu
 set incsearch
 set hlsearch
 
+
+
 " number/relativenumber toggle function
 function! LineNumToggle()
   if(&relativenumber == 1)
@@ -87,10 +88,17 @@ function! LineNumToggle()
   endif
 endfunc
 
+" map Ctrl+n to toggle line number
 nnoremap <C-n> :call LineNumToggle()<cr>
 
+" relativenumber on normal mode
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+" revert to absolute numbers when lost focus 
+autocmd FocusLost * :set number
+autocmd FocusGained * :set relativenumber
+
 
 " lBeri0 Keymappings
 inoremap jk <esc>
