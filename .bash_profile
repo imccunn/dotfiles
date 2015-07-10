@@ -18,11 +18,15 @@ PS1='[\W]$(__git_ps1 " (%s)") $ '
 alias ..="cd .."
 
 # Terminal
-alias ll="ls -lap"
-alias la="ls -la"
+alias ll="ls -lp"
+alias la="ls -lap"
+# List directories first, then non directories
+alias lx="ls -lap | grep '^d' && ls -lap | grep -v '^d'"
 
+# Creation and Deletion 
 alias rm="rm -i"
 alias mkdir="mkdir -pv"
+alias cp="cp -i"
 
 # Open Navigations
 alias o.="open ."
