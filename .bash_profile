@@ -31,3 +31,9 @@ alias cp="cp -i"
 # Open Navigations
 alias o.="open ."
 alias s.="subl ."
+
+curlJSON() {
+  curl -H "Content-Type: application/json" -X $2 -d $3 "http://$1"
+}
+
+alias curj=curlJSON
