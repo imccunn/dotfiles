@@ -1,0 +1,14 @@
+#!/bin/sh
+echo 'loading tmux';
+
+tmux new-session -d -s haust
+
+tmux new-window -t haust:1 -n 'prog1' 
+tmux new-window -t haust:2 -n 'prog2'
+tmux new-window -t haust:3 -n 'prog3'
+tmux new-window -t haust:4 -n 'prog4'
+tmux new-window -t haust:5 -n 'prog5'
+
+tmux select-window -t haust:1
+
+tmux -2 attach-session -t haust
