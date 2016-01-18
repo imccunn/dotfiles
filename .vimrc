@@ -32,6 +32,10 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'moll/vim-node'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'pangloss/vim-javascript'
 " You can specify revision/branch/tag.
         
 " Required:
@@ -72,7 +76,6 @@ set number
 set cursorline
 set title
 set ruler
-set background=light
 set wildmenu
 set incsearch
 set hlsearch
