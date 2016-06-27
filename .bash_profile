@@ -15,9 +15,8 @@ alias ..="cd .."
 alias o.="open ."
 alias s.="subl ."
 alias ll="ls -laF"
-
-alias lx="ls -laF | grep '^d' && ls -lap | grep -v '^d'"
 alias cll="clear && ll"
+alias lx="ls -laF | grep '^d' && ls -lap | grep -v '^d'"
 
 # alias tmux="TERM=screen-256color-bce tmux"
 
