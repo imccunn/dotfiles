@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# url=$(sed -n "s/url = \(.*\).git/\1/p" .git/config | sed "s/[[:blank:]]//g")
+url=$(git config --get remote.origin.url)
+echo "Opening: $url"
+open $url
