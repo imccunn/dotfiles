@@ -1,0 +1,17 @@
+[alias]
+  s = status
+  d = diff
+  a = add
+  c = commit
+  b = branch
+  co = checkout
+[user]
+  name = Ian D. McCunn
+  email = ianmccunn@gmail.com
+[github]
+  user = imccunn
+
+[url "https://"]
+	insteadOf = git://
+[core]
+	editor = /usr/local/bin/vim
