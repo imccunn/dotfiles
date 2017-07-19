@@ -9,14 +9,18 @@ export CLICOLOR=1
 . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1='[\t - \W]$(__git_ps1 " (%s)") $ '
+export PS1='[\w]$(__git_ps1 " (%s)") $ '
+export PS2="| =>"
 
 alias ..="cd .."
 alias o.="open ."
 alias s.="subl ."
 alias ll="ls -laF"
+alias c="clear"
 alias cll="clear && ll"
+
 alias lx="ls -laF | grep '^d' && ls -lap | grep -v '^d'"
+# alias vi="nvim"
 
 # alias tmux="TERM=screen-256color-bce tmux"
 
