@@ -1,4 +1,3 @@
-export PATH=~/Applications/mongodb/bin:$PATH
 export PATH=$PATH:~/cmdCustom
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/mysql/bin:/usr/local/sbin
