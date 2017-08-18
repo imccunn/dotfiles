@@ -1,3 +1,4 @@
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%\ of\ %L]
 " lBerio0 vimrc file
 " 6/15
 
@@ -25,18 +26,17 @@ call neobundle#begin(expand('/Users/ianmccunn/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
         
-" Add or remove your Bundles here:
+" Add or remove bundles here:
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundle 'bling/vim-airline'
 NeoBundle 'moll/vim-node'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'godlygeek/tabular'
+NeoBundle 'jiangmio/auto-pairs'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'pangloss/vim-javascript'
-" You can specify revision/branch/tag.
+NeoBundle 'mattn/emmet-vim'
         
 " Required:
 call neobundle#end()
@@ -58,7 +58,6 @@ augroup myvimrc
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-
 colorscheme monokai 
 
 syntax on
@@ -76,36 +75,37 @@ set number
 set cursorline
 set title
 set ruler
+set background=light
 set wildmenu
 set incsearch
 set hlsearch
-
-
+set tw=80
 
 " number/relativenumber toggle function
-function! LineNumToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
+" function! LineNumToggle()
+"   if(&relativenumber == 1)
+"     set number
+"   else
+"     set relativenumber
+"   endif
+" endfunc
+" 
+" " map Ctrl+n to toggle line number
+" nnoremap <C-n> :call LineNumToggle()<cr>
 
-" map Ctrl+n to toggle line number
-nnoremap <C-n> :call LineNumToggle()<cr>
+map <C-t> :NERDTreeToggle<CR>
 
 " relativenumber on normal mode
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
-" revert to absolute numbers when lost focus 
-autocmd FocusLost * :set number
-autocmd FocusGained * :set relativenumber
+" autocmd InsertEnter * :set number
+" autocmd InsertLeave * :set relativenumber
+" 
+" " revert to absolute numbers when lost focus 
+" autocmd FocusLost * :set number
+" autocmd FocusGained * :set relativenumber
 
 
 " lBeri0 Keymappings
 inoremap jk <esc>
-inoremap <esc> <nop>
 inoremap <UP> <nop>
 inoremap <DOWN> <nop>
 inoremap <LEFT> <nop>
