@@ -1,20 +1,13 @@
 export PATH=$PATH:~/cmdCustom
 export PATH=$PATH:~/bin
-export PATH=$PATH:/usr/local/mysql/bin:/usr/local/sbin
-
 export CLICOLOR=1
 
-. ~/.git-completion.bash
-. ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='[\w]$(__git_ps1 " (%s)") $ '
-export PS2="| =>"
 
 alias ..="cd .."
 alias o.="open ."
-alias s.="subl ."
-alias a.="atom ."
 alias ll="ls -laF"
 alias c="clear"
 alias cll="clear && ll"
