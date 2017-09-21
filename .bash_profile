@@ -7,7 +7,7 @@ export CLICOLOR=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='[\w]$(__git_ps1 " (%s)") $ '
-
+set -o vi
 alias ..="cd .."
 alias o.="open ."
 alias ll="ls -laF"
