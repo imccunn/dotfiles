@@ -24,8 +24,11 @@ curlJSON() {
   curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X $2 -d $3 "http://$1"
 }
 
+showHeaders() {
+  curl -IkX GET $1
+}
+
 alias curj=curlJSON
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.profile
 
