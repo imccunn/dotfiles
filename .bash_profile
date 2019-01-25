@@ -1,4 +1,3 @@
-export PATH=$PATH:~/cmdCustom
 export PATH=$PATH:~/bin
 export CLICOLOR=1
 
@@ -15,9 +14,7 @@ alias c="clear"
 alias cll="clear && ll"
 
 alias lx="ls -laF | grep '^d' && ls -lap | grep -v '^d'"
-# alias vi="nvim"
-
-# alias tmux="TERM=screen-256color-bce tmux"
+alias vi="nvim"
 
 # curl in the form of : curj localhost:3333 POST '{"payload":"payload"}'
 curlJSON() {
@@ -29,6 +26,3 @@ showHeaders() {
 }
 
 alias curj=curlJSON
-
-source ~/.profile
-
